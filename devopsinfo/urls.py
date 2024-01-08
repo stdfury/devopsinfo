@@ -25,5 +25,5 @@ urlpatterns = [
     path('geography/', v.geography_page),
     path('skills/', v.skills_page),
     path('recent_vacations/', v.recent_vacations_page),
-    path('/admin', admin.site.urls),
+    path('admin/', admin.site.urls),
 ]
