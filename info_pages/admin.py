@@ -1,3 +1,7 @@
 from django.contrib import admin
+from . import models
 
-# Register your models here.
+admin.site.register(models.Demand_devops_amount)
+admin.site.register(models.Demand_devops_salary)
+admin.site.register(models.Demand_average_amount)
+admin.site.register(models.Demand_average_salary)
