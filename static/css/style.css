@@ -1,0 +1,28 @@
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+nav {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.main-content {
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+.logo {
+    height: 100px;
+}
+
+.container {
+    padding-top: 10px;
+}
+
+header {
+    height: 100px;
+    padding-top: 0px;
+}

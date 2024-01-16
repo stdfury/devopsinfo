@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DevOpsInfo</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@next/css/pico.min.css"/>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<header class="container">
+    <nav>
+        <ul>
+            <li></li>
+        </ul>
+        <ul>
+            <li><strong> <img src="{% static 'img/logotype.svg' %}" alt="alt" class="logo">
+            </strong></li>
+        </ul>
+        <ul>
+            <li>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<main class="container">
+    <div class="grid">
+        <aside>
+            <nav class="col col-lg-2">
+                <ul>
+                    <li><strong>DevOpsInfo</strong></li>
+                </ul>
+                <ul>
+                    <li><a href="#">Главная</a></li>
+                    <li><a href="#">О нас</a></li>
+                    <li><a href="#" role="button">Контакты</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <section class="main-content">
+            <hgroup>
+                <h2>Добро пожаловать</h2>
+                <h3>Основной раздел вашего сайта</h3>
+            </hgroup>
+            <p>Здесь будет основное содержимое вашего сайта, которое будет меняться для каждой страницы.</p>
+            <figure>
+                <img src="https://via.placeholder.com/600x400" alt="Основное изображение"/>
+                <figcaption><a href="#" target="_blank">Подробнее</a></figcaption>
+            </figure>
+            <h3>Дополнительная информация</h3>
+            <p>Здесь может быть дополнительный текст или информация, связанная с основным контентом.</p>
+        </section>
+    </div>
+</main>
+
+<section aria-label="Subscribe example" class="container">
+    <article>
+        <hgroup>
+            <h2>Подписка</h2>
+            <h3>Будьте в курсе новостей</h3>
+        </hgroup>
+        <form class="grid">
+            <input type="text"
+
+                   id="firstname" name="firstname" placeholder="Ваше имя" aria-label="Ваше имя" required/>
+            <input type="email" id="email" name="email" placeholder="Ваш email" aria-label="Ваш email" required/>
+            <button type="submit" onclick="event.preventDefault()">Подписаться</button>
+        </form>
+    </article>
+</section>
+
+<footer class="container">
+    <small>
+        <a href="#">Политика конфиденциальности</a> • <a href="#">Условия использования</a>
+    </small>
+</footer>
+</body>
+</html>
