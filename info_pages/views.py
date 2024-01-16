@@ -3,7 +3,7 @@ from django.http import HttpResponse
 
 # Create your views here.
 def main_page(request):
-    return HttpResponse('main page')
+    return render(request, "main_page.html")
 
 
 def demand_page(request):
