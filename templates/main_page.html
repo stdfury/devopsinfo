@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
-<html lang="ru">
+<html lang="ru" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,13 +10,13 @@
 </head>
 <body>
 
-<header class="container">
+<header class="container header">
     <nav>
         <ul>
-            <li></li>
+            <li><img src="{% static 'img/logo.svg' %}" alt="alt" class="logo"></li>
         </ul>
         <ul>
-            <li><strong> <img src="{% static 'img/logotype.svg' %}" alt="alt" class="logo">
+            <li><strong><h1>DevOpsInfo</h1>
             </strong></li>
         </ul>
         <ul>
@@ -31,51 +31,33 @@
         <aside>
             <nav class="col col-lg-2">
                 <ul>
-                    <li><strong>DevOpsInfo</strong></li>
-                </ul>
-                <ul>
                     <li><a href="#">Главная</a></li>
-                    <li><a href="#">О нас</a></li>
-                    <li><a href="#" role="button">Контакты</a></li>
+                    <li><a href="#">Востребованность</a></li>
+                    <li><a href="#">География</a></li>
+                    <li><a href="#">Навыки</a></li>
+                    <li><a href="#">Последние вакансии</a></li>
                 </ul>
             </nav>
         </aside>
         <section class="main-content">
             <hgroup>
                 <h2>Добро пожаловать</h2>
-                <h3>Основной раздел вашего сайта</h3>
             </hgroup>
-            <p>Здесь будет основное содержимое вашего сайта, которое будет меняться для каждой страницы.</p>
             <figure>
-                <img src="https://via.placeholder.com/600x400" alt="Основное изображение"/>
-                <figcaption><a href="#" target="_blank">Подробнее</a></figcaption>
+                <img src="{% static "img/devops_illustration.png" %}" alt="Основное изображение"/>
             </figure>
-            <h3>Дополнительная информация</h3>
-            <p>Здесь может быть дополнительный текст или информация, связанная с основным контентом.</p>
+            <p>Профессия DevOps (сокращение от Development и Operations) представляет собой современный подход к
+                разработке программного обеспечения, который объединяет разработку (Dev) и операционную деятельность
+                (Ops). Основная цель DevOps - улучшить сотрудничество между разработчиками и специалистами по
+                эксплуатации, чтобы ускорить процесс разработки и обеспечить более эффективное и надежное программное
+                обеспечение</p>
         </section>
     </div>
 </main>
 
-<section aria-label="Subscribe example" class="container">
-    <article>
-        <hgroup>
-            <h2>Подписка</h2>
-            <h3>Будьте в курсе новостей</h3>
-        </hgroup>
-        <form class="grid">
-            <input type="text"
-
-                   id="firstname" name="firstname" placeholder="Ваше имя" aria-label="Ваше имя" required/>
-            <input type="email" id="email" name="email" placeholder="Ваш email" aria-label="Ваш email" required/>
-            <button type="submit" onclick="event.preventDefault()">Подписаться</button>
-        </form>
-    </article>
-</section>
-
 <footer class="container">
-    <small>
-        <a href="#">Политика конфиденциальности</a> • <a href="#">Условия использования</a>
-    </small>
+    <p>Черкасов Александр Ильич</p>
+    <p>РИ-220946</p>
 </footer>
 </body>
 </html>
