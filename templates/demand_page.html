@@ -31,8 +31,8 @@
         <aside>
             <nav class="col col-lg-2">
                 <ul>
-                    <li><a href="#">Главная</a></li>
-                    <li><a href="#">Востребованность</a></li>
+                    <li><a href="/">Главная</a></li>
+                    <li><a href="demand/">Востребованность</a></li>
                     <li><a href="#">География</a></li>
                     <li><a href="#">Навыки</a></li>
                     <li><a href="#">Последние вакансии</a></li>
@@ -55,7 +55,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                {% for i in data %}
+                {% for i in avg_salary %}
                     <tr>
                         <td>
                             {{ i.year }}
@@ -67,13 +67,90 @@
                 {% endfor %}
                 </tbody>
             </table>
+
+            <h4>
+                Динамика количества вакансий по годам:
+            </h4>
+            <img src="{{ images.average_amount.url }}">
+            <table>
+                <thead>
+                <tr>
+                    <th scope="col">Год</th>
+                    <th scope="col">Количество вакансий</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for i in avg_amount %}
+                    <tr>
+                        <td>
+                            {{ i.year }}
+                        </td>
+                        <td>
+                            {{ i.vacancy_amount }}
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+
+            <h4>
+                Динамика уровня зарплат по годам для профессии DevOps:
+            </h4>
+            <img src="{{ images.devops_salary.url }}">
+            <table>
+                <thead>
+                <tr>
+                    <th scope="col">Год</th>
+                    <th scope="col">Зарплата</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for i in devops_salary %}
+                    <tr>
+                        <td>
+                            {{ i.year }}
+                        </td>
+                        <td>
+                            {{ i.salary }}
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+
+            <h4>
+                Динамика количества вакансий по годам для профессии DevOps:
+            </h4>
+            <img src="{{ images.devops_amount.url }}">
+            <table>
+                <thead>
+                <tr>
+                    <th scope="col">Год</th>
+                    <th scope="col">Количество вакансий</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for i in devops_amount %}
+                    <tr>
+                        <td>
+                            {{ i.year }}
+                        </td>
+                        <td>
+                            {{ i.vacancy_amount }}
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
         </section>
     </div>
 </main>
 
 <footer class="container">
     <p>Черкасов Александр Ильич</p>
-    <p>РИ-220946</p>
+    <p>РИ-220946 <> АТ-31</p>
 </footer>
 </body>
 </html>
