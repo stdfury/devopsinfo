@@ -22,10 +22,10 @@ from django.conf.urls.static import static
 from info_pages import views as v
 
 urlpatterns = [
-    path('', v.main_page),
-    path('demand/', v.demand_page),
-    path('geography/', v.geography_page),
-    path('skills/', v.skills_page),
-    path('recent_vacancies/', v.recent_vacancies_page),
+    path('', v.main_page, name="main"),
+    path('demand/', v.demand_page, name="demand"),
+    path('geography/', v.geography_page, name="geography"),
+    path('skills/', v.skills_page, name="skills"),
+    path('recent_vacancies/', v.recent_vacancies_page, name="recent_vacancies"),
     path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
