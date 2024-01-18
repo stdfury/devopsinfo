@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DevOpsInfo</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@next/css/pico.min.css"/>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<header class="container header">
+    <nav>
+        <ul>
+            <li><img src="{% static 'img/logo.svg' %}" alt="alt" class="logo"></li>
+        </ul>
+        <ul>
+            <li><strong><h1>DevOpsInfo</h1>
+            </strong></li>
+        </ul>
+        <ul>
+            <li>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<main class="container">
+    <div class="grid">
+        <aside>
+            <nav class="col col-lg-2">
+                <ul>
+                    <li><a href="/">Главная</a></li>
+                    <li><a href="demand/">Востребованность</a></li>
+                    <li><a href="geography/">География</a></li>
+                    <li><a href="skills/">Навыки</a></li>
+                    <li><a href="recent_vacancies/">Последние вакансии</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <section class="main-content">
+            <hgroup>
+                <h2>География</h2>
+            </hgroup>
+            <h4>
+                Уровень зарплат по городам:
+            </h4>
+            <img src="{{ images.salary.url }}">
+            <table>
+                <thead>
+                <tr>
+                    <th scope="col">Город</th>
+                    <th scope="col">Зарплата</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for i in salary %}
+                    <tr>
+                        <td>
+                            {{ i.city }}
+                        </td>
+                        <td>
+                            {{ i.salary }}
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+            <h4>
+                Доля вакансий по городам:
+            </h4>
+            <img src="{{ images.rating.url }}">
+            <table>
+                <thead>
+                <tr>
+                    <th scope="col">Город</th>
+                    <th scope="col">Доля вакансий</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for i in rating %}
+                    <tr>
+                        <td>
+                            {{ i.city }}
+                        </td>
+                        <td>
+                            {{ i.rate }}
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+
+            <h4>
+                Уровень зарплат по городам для профессии DevOps:
+            </h4>
+            <img src="{{ images.devops_salary.url }}">
+            <table>
+                <thead>
+                <tr>
+                    <th scope="col">Город</th>
+                    <th scope="col">Зарплата</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for i in devops_salary %}
+                    <tr>
+                        <td>
+                            {{ i.city }}
+                        </td>
+                        <td>
+                            {{ i.salary }}
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+
+            <h4>
+                Доля вакансий по городам для профессии DevOps:
+            </h4>
+            <img src="{{ images.devops_rating.url }}">
+            <table>
+                <thead>
+                <tr>
+                    <th scope="col">Город</th>
+                    <th scope="col">Количество вакансий</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for i in devops_rating %}
+                    <tr>
+                        <td>
+                            {{ i.city }}
+                        </td>
+                        <td>
+                            {{ i.rate }}
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </section>
+    </div>
+</main>
+
+<footer class="container">
+    <p>Черкасов Александр Ильич</p>
+    <p>РИ-220946 - АТ-31</p>
+</footer>
+</body>
+</html>

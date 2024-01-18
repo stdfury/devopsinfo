@@ -24,7 +24,19 @@ def demand_page(request):
 
 
 def geography_page(request):
-    return HttpResponse('geography')
+    salary = models.Geography_salary.objects.all()
+    rating = models.Geography_rating.objects.all()
+    devops_salary = models.Geography_devops_salary.objects.all()
+    devops_rating = models.Geography_devops_rating.objects.all()
+    images = models.Geography_charts.objects.all()[0]
+    context = {
+        "salary": salary,
+        "rating": rating,
+        "devops_salary": devops_salary,
+        "devops_rating": devops_rating,
+        "images": images,
+    }
+    return render(request, "geography_page.html", context=context)
 
 
 def skills_page(request):

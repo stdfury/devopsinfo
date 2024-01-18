@@ -50,7 +50,7 @@ class Geography_devops_rating(models.Model):
 
 
 class Geography_charts(models.Model):
-    salary = models.ImageField(upload_to='demand')
-    rating = models.ImageField(upload_to='demand')
-    devops_salary = models.ImageField(upload_to='demand')
-    devops_rating = models.ImageField(upload_to='demand')
+    salary = models.ImageField(upload_to='geography')
+    rating = models.ImageField(upload_to='geography')
+    devops_salary = models.ImageField(upload_to='geography')
+    devops_rating = models.ImageField(upload_to='geography')
