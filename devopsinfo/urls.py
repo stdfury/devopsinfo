@@ -26,6 +26,6 @@ urlpatterns = [
     path('demand/', v.demand_page),
     path('geography/', v.geography_page),
     path('skills/', v.skills_page),
-    path('recent_vacations/', v.recent_vacations_page),
+    path('recent_vacancies/', v.recent_vacancies_page),
     path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -31,5 +31,5 @@ def skills_page(request):
     return HttpResponse('skills')
 
 
-def recent_vacations_page(request):
+def recent_vacancies_page(request):
     return HttpResponse('recent')
