@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DevOpsInfo</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@next/css/pico.min.css"/>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<header class="container header">
+    <nav>
+        <ul>
+            <li><img src="{% static 'img/logo.svg' %}" alt="alt" class="logo"></li>
+        </ul>
+        <ul>
+            <li><strong><h1>DevOpsInfo</h1>
+            </strong></li>
+        </ul>
+        <ul>
+            <li>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<main class="container">
+    <div class="grid">
+        <aside>
+            <nav class="col col-lg-2">
+                <ul>
+                    <li><a href="{% url 'main' %}">Главная</a></li>
+                    <li><a href="{% url 'demand' %}">Востребованность</a></li>
+                    <li><a href="{% url 'geography' %}">География</a></li>
+                    <li><a href="{% url 'skills' %}">Навыки</a></li>
+                    <li><a href="{% url 'recent_vacancies' %}">Последние вакансии</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <section class="main-content">
+            <hgroup>
+                <h2>Последние вакансии</h2>
+                <h4>Выгрузка с сайта HH.ru за последние сутки:</h4>
+            </hgroup>
+            {% for vacancy in vacancies %}
+            <article class="vacancy-card">
+                <h4 class="vacancy-card-header">{{ vacancy.name }}</h4>
+                <ul>
+                    <li>
+                        {{ vacancy.desc }}
+                    </li>
+                    <li>
+                        Необходимые навыки: {{ vacancy.skills }}
+                    </li>
+                    <li>
+                        Название компании: {{ vacancy.company }}
+                    </li>
+                    <li>
+                        Заработная плата: {{ vacancy.salary }}
+                    </li>
+                    <li>
+                        {{ vacancy.region }}
+                    </li>
+                    <li>
+                        Дата публикации: {{ vacancy.date }}
+                    </li>
+                </ul>
+            </article>
+            {% endfor %}
+
+        </section>
+    </div>
+</main>
+
+<footer class="container">
+    <p>Черкасов Александр Ильич</p>
+    <p>РИ-220946 - АТ-31</p>
+</footer>
+</body>
+</html>

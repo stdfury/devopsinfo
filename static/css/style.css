@@ -2,7 +2,7 @@
     --pico-background-color: #282a36;
     --pico-color: #f8f8f2;
     --pico-primary: #8be9fd;
-
+    --pico-border-radius: 2rem;
 }
 
 .grid {
@@ -40,4 +40,15 @@ header {
 
 table {
     width: 50%;
+}
+
+.vacancy-card {
+    width: 75%;
+    padding-top: 35px;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+}
+
+.vacancy-card-header {
+    text-align: center;
 }

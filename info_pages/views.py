@@ -1,8 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from . import hh_parser
 from . import models
 
-# Create your views here.
+
 def main_page(request):
     return render(request, "main_page.html")
 
@@ -44,4 +45,8 @@ def skills_page(request):
 
 
 def recent_vacancies_page(request):
-    return HttpResponse('recent')
+    vacancies = hh_parser.get_vacancies()
+    context = {
+        "vacancies": vacancies,
+    }
+    return render(request, "recent_vacancies.html", context=context)
