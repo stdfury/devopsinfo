@@ -1,6 +1,25 @@
 version: '3.8'
 
 services:
+  traefik:
+    image: traefik:v2.3
+    command:
+      - "--api.insecure=true"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.websecure.address=:443"
+      - "--certificatesresolvers.myresolver.acme.tlschallenge=true"
+      - "--certificatesresolvers.myresolver.acme.email=me@quniob.ru"
+      - "--certificatesresolvers.myresolver.acme.storage=/letsencrypt/acme.json"
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "letsencrypt:/letsencrypt"
+    depends_on:
+      - postgres
+
   postgres:
     image: postgres
     container_name: postgres
@@ -14,9 +33,14 @@ services:
 
   devopsinfo:
     build: .
-    command: python manage.py runserver 0.0.0.0:8000
+    command: gunicorn --bind 0.0.0.0:8000 devopsinfo.wsgi:application
     volumes:
       - .:/usr/src/app
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.devopsinfo.rule=Host(`korneplod.xyz`)"
+      - "traefik.http.routers.devopsinfo.entrypoints=websecure"
+      - "traefik.http.routers.devopsinfo.tls.certresolver=myresolver"
     ports:
       - "8000:8000"
     depends_on:
