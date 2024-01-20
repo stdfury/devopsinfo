@@ -32,7 +32,9 @@ services:
 
   devopsinfo:
     build: .
-    command: python manage.py runserver
+    command: python manage.py runserver 0.0.0.0:8000
+    environment:
+      DB_HOST: "postgres"
     volumes:
       - .:/usr/src/app
     labels:
