@@ -32,7 +32,7 @@ services:
 
   devopsinfo:
     build: .
-    command: gunicorn --bind 0.0.0.0:8000 devopsinfo.wsgi:application
+    command: python manage.py runserver
     volumes:
       - .:/usr/src/app
     labels:
