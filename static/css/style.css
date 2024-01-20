@@ -1,7 +1,12 @@
 [data-theme=dark] {
-    --pico-background-color: #282a36;
-    --pico-color: #f8f8f2;
-    --pico-primary: #8be9fd;
+    --pico-background-color: #303446;
+    --pico-card-background-color: #232634;
+    --pico-color: #c6d0f5;
+    --pico-primary: #8caaee;
+    --pico-h1-color: #8caaee;
+    --pico-h2-color: #7997cf;
+    --pico-h4-color: #687db2;
+    --pico-table-border-color: #232634;
     --pico-border-radius: 2rem;
 }
 
@@ -39,7 +44,9 @@ header {
 }
 
 table {
-    width: 50%;
+    border-radius: 20px;
+    width: 100%;
+    margin-top: 30px;
 }
 
 .vacancy-card {

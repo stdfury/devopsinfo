@@ -41,7 +41,7 @@ def geography_page(request):
 
 
 def skills_page(request):
-    return HttpResponse('skills')
+    return render(request, "skills_page.html")
 
 
 def recent_vacancies_page(request):
